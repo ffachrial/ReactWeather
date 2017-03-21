@@ -10,7 +10,7 @@ import React from 'react';
 
 var Examples = () => {
   return (
-    <h3>Examples Component</h3>
+    <h3>Examples Component!</h3>
   )
 };
 
