@@ -6,6 +6,9 @@ import { Route, Router, IndexRoute, hashHistory} from 'react-router';
 require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
 
+// App css
+require('style!css!applicationStyles');
+
 import Main from 'Main';
 import Weather from 'Weather';
 import About from 'About';
