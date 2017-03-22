@@ -17,7 +17,9 @@ export default class Weather extends React.Component {
 
     this.setState({
       isLoading: true,
-      errorMessage: undefined
+      errorMessage: undefined,
+      location: undefined,
+      temp: undefined
     });
 
     getTemp(location).then(function (temp) {
@@ -34,6 +36,23 @@ export default class Weather extends React.Component {
     });
   };
 
+  componentDidMount() {
+    const location = this.props.location.query.location;
+
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+      window.location.hash = '#/';
+    }
+  };
+
+  componentWillReceiveProps(newProps) {
+    const location = newProps.location.query.location;
+
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+      window.location.hash = '#/';
+    }
+  }
   render() {
     const {location, temp, isLoading, errorMessage} = this.state;
 
