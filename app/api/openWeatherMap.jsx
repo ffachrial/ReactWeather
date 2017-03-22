@@ -13,6 +13,6 @@ export function getTemp (location) {
       return res.data.main.temp;
     }
   }, function (res) {
-    throw new Error(res.data.message);
+    throw new Error('Unable to fetch weather for that location');
   });
 }
